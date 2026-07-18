@@ -1,0 +1,101 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+ /* //8. celsius to fahrenheit
+  int c;
+  printf("enter celsius:");
+  scanf("%d",&c);
+  int fa=c*9/5+32;
+  printf("%d\n",fa);
+
+
+
+   // 9. simple reinterpret
+   
+   int p,r,t;
+   printf("enter p:");
+   scanf("%d",&p);
+   printf("enter r:");
+   scanf("%d",&r);
+   printf("enter t:");
+   scanf("%d",&t);
+   int i=p*r*t/100;
+   printf("simple interest:%d\n",i);
+
+
+
+// 10.total precentage
+ 
+ 
+ int m1=90,m2=65,m3=55,m4=50,m5=80;
+float p=( m1=90,m2=65,m3=55,m4=50,m5=80,m1+m2+m3+m4+m5);
+float t=(p/500)*100;
+printf("%f\n",t);
+
+
+
+
+// total percentage
+
+   int m1;
+   int m2;
+   int m3;
+   int m4;
+   int m5;
+printf("enter mark for m1:");
+scanf("%d",&m1);
+printf("enter mark for m2:");
+scanf("%d",&m2);
+printf("enter mark for m3:");
+scanf("%d",&m3);
+printf("enter mark for m4:");
+scanf("%d",&m4);
+printf("enter mark for m5:");
+scanf("%d",&m5);
+float total =m1+m2+m3+m4+m5;
+float p=(total/500)*100;
+printf("total mark is :%d\n",total);
+printf("percentage is :%f\n",p);
+
+
+
+// assignment operators
+
+int x=5;
+printf("%d\n",x);
+x+=6;
+printf("%d\n",x);
+x-=7;
+printf("%d\n",x);
+x*=8;
+printf("%d\n",x);
+x/=3;
+printf("%d\n",x);
+x%=2;
+printf("%d\n",x);
+
+
+
+
+// comma operators
+int a=10,b=30,c;
+c=(a+b);
+printf("%d\n",c);
+printf("square of a=%d\n",a*a);
+printf("cube of a=%d\n",a*a*a);
+printf("square of b=%d\n",b*b);
+printf("cube of b=%d\n",b*b*b);*/
+
+
+
+    return 0;
+}
