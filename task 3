@@ -1,0 +1,92 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include<string.h>
+#include<ctype.h>
+int main()
+{
+    /*
+    //length of string
+    char str[30]="thiruvanamalai";
+    printf("%d\n",strlen(str));*/
+    
+    
+ /*   //string copy 
+    
+    char str1[40];
+    char str2[30]="name";
+    char str3[50]="gokul";
+    printf("before copy%s\n",str2);
+    strcpy(str2,str1);
+    printf("after copy%s\n",str3);
+    printf("%s\n",strcpy(str2,str3));*/
+    
+    
+   /* // string cat
+    
+    char str1[30];
+    char str2[40];
+    printf("enter your name:");
+    scanf("%s",str1);
+    printf("enter your college:");
+    scanf("%s",str2);
+    printf("%s\n",strcat(str1,str2));*/
+    
+    
+   /* // string camp
+    
+    char str1[30];
+    char str2[40];
+    printf(" enter your name :");
+    scanf("%s",str1);
+    printf("enter your name :");
+    scanf("%s",str2);
+    if(strcmp(str1,str2)==0){
+        printf("equal");
+    }
+else if(strcmp(str1,str2)!=0){
+    printf("not equal");
+} */
+    
+    
+    
+    
+    
+  /* // upper case
+    int i;
+    char str[30]="thiruvanamalai";
+    for(int i=0;str[i]!='\0';i++){
+        str[i]=toupper(str[i]);
+        }
+        printf("%s\n",str);*/
+    
+    
+   /* // lower case
+    int i;
+    char str[30];
+    printf("enter bike name:");
+    scanf("%s",str);
+    for(int i=0;str[i]!='\0';i++){
+        str[i]=tolower(str[i]);
+    }
+    printf("%s\n",str);*/
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    return 0;
+}
