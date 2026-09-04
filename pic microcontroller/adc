@@ -1,0 +1,99 @@
+
+
+#include <xc.h>
+#include<stdio.h>
+
+//configuration bits
+#pragma config FOSC = HS        // Oscillator Selection bits (HS oscillator)
+#pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT enabled)
+#pragma config PWRTE = ON// Power-up Timer Enable bit (PWRT disabled)
+#pragma config BOREN = ON       // Brown-out Reset Enable bit (BOR enabled)
+#pragma config LVP = OFF       // Low-Voltage (Single-Supply) In-Circuit Serial Programming Enable bit (RB3/PGM pin has PGM function; low-voltage programming enabled)
+#pragma config CPD = OFF        // Data EEPROM Memory Code Protection bit (Data EEPROM code protection off)
+#pragma config WRT = OFF        // Flash Program Memory Write Enable bits (Write protection off; all program memory may be written to by EECON control)
+#pragma config CP = OFF         // Flash Program Memory Code Protection bit (Code protection off)
+
+#define _XTAL_FREQ 2000000
+
+void UART_Init(void);
+void UART_sendchar(char c);
+void UART_sendstring(const char * s);
+
+void ADC_Init(void);
+unsigned int ADC_Read(unsigned char channel);
+
+
+void UART_Init(void){
+    TRISC6=1;
+    TRISC7=1;
+    
+    SPBRG=129;
+    
+    BRGH=1;
+    SYNC=0;
+    SPEN=1;
+    
+    TXEN=1;
+    CREN=1;
+}
+void UART_Sendchar(char c)
+{
+    while(TXIF==0);
+    
+    TXREG=c ;
+}
+void UART_sendstring(const char *s)
+{
+    while(*s)
+    {
+        UART_sendchar(*s++);
+    }
+}
+unsigned ADC_Init(void)
+{
+    TRISA0=1;
+    
+    ADC0N1 = 0b10000000;
+    
+    ADC0N0 = 0b10000001;
+    
+    
+}
+
+unsigned int ADC_Read(unsigned char channel)
+{
+    unsinged int result;
+    
+    ADC0N0&=0XC5;
+    ADC0N0|=(channel<<3);
+    
+    __delay_us(20);
+    GO_DONE=1;
+    
+    while(GO_DONE);
+    
+    result=((unsinged int)ADRESH<<8)
+    
+    return result;
+}
+
+
+
+void main(void) {
+    unsigned int adcvalue;
+    char uartBuffer[30];
+    
+    UART_SendString("\r\nADC started\r\n");
+    
+    while(1)
+    {
+        adcvalue=ADC_Read(0);
+        
+        sprintf(uartBuffer,
+                "ADC value=%u\r\n",
+                adcvalue);
+        UART_Sendstring(uartBuffer);
+        __delay_ms(500);
+    }
+    return;
+}
